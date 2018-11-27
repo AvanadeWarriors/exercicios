@@ -22,32 +22,15 @@ let livros = [
     
 ];
 
-let ordenar = function(obj,type){
-    switch (type) {
-        case "publicacao":
-            let pub = obj.sort(function(a, b){return a.publicacao - b.publicacao});
+//Modificação no código para que o mesmo possa ser usado para diferentes atributos.
 
-            console.log(pub);
-        break;
+var ordenar = function(listaObj, attr){
+    var listaOrdenada = listaObj.sort(function(a,b){
+        return (a[attr] < b[attr])? -1 : ((a[attr] > b[attr])? 1: 0);
+    });
 
-        case "titulo":
-            let tit = obj.sort(function(a, b){
-                var x = a.titulo.toLowerCase();
-                var y = b.titulo.toLowerCase();
-                if (x < y) {return -1;}
-                if (x > y) {return 1;}
-                return 0;
-            });
-
-            console.log(tit);
-        break;
-
-        default:
-            console.log("Opção invalida");
-        break;
-    }
+    console.log(listaOrdenada);
 }
 
-ordenar(livros,"publicacao");
-console.log("------------------------------------------------------")
 ordenar(livros,"titulo");
+
