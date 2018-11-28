@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+    <title>Exe04</title>
+</head>
+<body>
+
+    <button id="btnSortear" onclick="sortearFruta()">Sortear fruta</button>
+    
+
+    <div id="resultado"></div>
+
+
+    <script type="text/javascript">
+
+        var frutas = [
+            {
+                fruta: "uva",
+                imagem:"img/uva.jpg"
+            },
+            {
+                fruta: "banana",
+                imagem:"img/banana.jpg"
+            },
+            {
+                fruta: "pera",
+                imagem:"img/pera.jpg"
+            },
+            {
+                fruta: "manga",
+                imagem:"img/manga.jpg"
+            },
+            {
+                fruta: "abacaxi",
+                imagem:"img/abacaxi.jpg"
+            },
+            {
+                fruta: "laranja",
+                imagem:"img/laranja.jpg"
+            },
+            {
+                fruta: "mamao",
+                imagem:"img/mamao.jpg"
+            },
+            {
+                fruta: "melancia",
+                imagem:"img/melancia.jpg"
+            },
+            {
+                fruta: "maracuja",
+                imagem:"img/maracuja.jpg"
+            },
+            {
+                fruta: "morango",
+                imagem:"img/morango.jpg"
+            },
+        ]
+
+
+        function sortearFruta(){
+            var indice = Math.floor(Math.random() * 10);
+
+            var tagImg = document.createElement('img');
+            var div = document.getElementById('resultado');
+           
+            tagImg.setAttribute('src', frutas[indice].imagem);
+            div.innerHTML = '';
+            div.appendChild(tagImg);
+
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+    <title>Exe01</title>
+</head>
+<body>
+
+    <input type="text" name="texto" id="texto">
+    <button  onclick="copiaTexto()">OK</button>
+
+    <div id="resultado"></div>
+
+
+    <script type="text/javascript">
+
+        function copiaTexto(){
+            var div = document.getElementById('resultado');
+            div.innerText = document.getElementById('texto').value;
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+    <title>Exe03</title>
+</head>
+<body>
+
+    <input type="text" name="texto" id="texto" onKeyUp="checaFruta()">
+    
+
+    <div id="resultado"></div>
+
+
+    <script type="text/javascript">
+
+        var frutas = [
+            {
+                fruta: "uva",
+                imagem:"img/uva.jpg"
+            },
+            {
+                fruta: "banana",
+                imagem:"img/banana.jpg"
+            },
+            {
+                fruta: "pera",
+                imagem:"img/pera.jpg"
+            },
+            {
+                fruta: "manga",
+                imagem:"img/manga.jpg"
+            },
+            {
+                fruta: "abacaxi",
+                imagem:"img/abacaxi.jpg"
+            },
+        ]
+
+
+        function checaFruta(){
+            var tagImg = document.createElement('img');
+            var div = document.getElementById('resultado');
+
+            var valorFruta = document.getElementById('texto').value;
+
+
+            for (let i = 0; i < frutas.length; i++) {
+                const fruta = frutas[i];
+                if(valorFruta==fruta.fruta){
+
+                    tagImg.setAttribute('src', fruta.imagem);
+                    div.innerHTML = '';
+                    div.appendChild(tagImg);
+                }
+                
+            }
+        }
+
+    </script>
+</body>
+</html>

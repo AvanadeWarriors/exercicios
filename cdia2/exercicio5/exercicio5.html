@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<head>
+    <title>Exe05</title>
+</head>
+<body>
+
+    <button id="btnSortear" onclick="sortearFruta()">Sortear fruta</button>
+    
+
+    <div id="resultado"></div>
+
+
+    <script type="text/javascript">
+
+        var frutas = [
+            {
+                fruta: "uva",
+                imagem:"img/uva.jpg"
+            },
+            {
+                fruta: "banana",
+                imagem:"img/banana.jpg"
+            },
+            {
+                fruta: "pera",
+                imagem:"img/pera.jpg"
+            },
+            {
+                fruta: "manga",
+                imagem:"img/manga.jpg"
+            },
+            {
+                fruta: "abacaxi",
+                imagem:"img/abacaxi.jpg"
+            },
+            {
+                fruta: "laranja",
+                imagem:"img/laranja.jpg"
+            },
+            {
+                fruta: "mamao",
+                imagem:"img/mamao.jpg"
+            },
+            {
+                fruta: "melancia",
+                imagem:"img/melancia.jpg"
+            },
+            {
+                fruta: "maracuja",
+                imagem:"img/maracuja.jpg"
+            },
+            {
+                fruta: "morango",
+                imagem:"img/morango.jpg"
+            },
+        ]
+
+         var numerosSorteados = [];
+
+
+        function sortearFruta(){
+           
+            var indice = Math.floor(Math.random() * 10);
+            
+            if(numerosSorteados.length===frutas.length){
+                numerosSorteados = [];
+                console.log("Todos sorteados!")
+            }
+
+            while(numerosSorteados.indexOf(indice)!='-1'){
+                indice = Math.floor(Math.random() * 10);
+            }
+
+
+            if(numerosSorteados.indexOf(indice)=='-1'){
+                numerosSorteados.push(indice);
+                console.log(indice);
+                var tagImg = document.createElement('img');
+                var div = document.getElementById('resultado');
+           
+                tagImg.setAttribute('src', frutas[indice].imagem);
+                div.innerHTML = '';
+                div.appendChild(tagImg);
+            
+            }else{
+                console.log("Nao pode repetir");
+            }
+    
+
+        }
+
+    </script>
+</body>
+</html>
