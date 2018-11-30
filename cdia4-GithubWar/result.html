@@ -86,7 +86,7 @@
         }
     </style>
 </head>
-<body>
+<body onload="iniciar()">
     <div class="container">
         <div class="header">
             <h1 style="display: inline-block;">GitHub WAR</h1>
@@ -94,7 +94,7 @@
         </div>
         <div class="left">
             <div id="info-user-a">
-                <img src="user.jpg" width="70" alt="">
+                <img id="user-0-img" src="user.jpg" width="70" alt="">
                 <table>
                     <thead>
                             <tr>
@@ -106,42 +106,42 @@
                         <tbody>
                             <tr>
                                 <td>Repositório Público</td>
-                                <td>s/n</td>
-                                <td>s/n</td>
+                                <td id="preps-0-qtd">s/n</td>
+                                <td id="preps-0-pts">s/n</td>
                             </tr>
                             <tr>
                                 <td>Seguidores</td>
-                                <td>s/n</td>
-                                <td>s/n</td>
+                                <td id="followers-0-qtd">s/n</td>
+                                <td id="followers-0-pts">s/n</td>
                             </tr>
                             <tr>
                                 <td>Seguindo</td>
-                                <td>s/n</td>
-                                <td>s/n</td>
+                                <td id="following-0-qtd">s/n</td>
+                                <td id="following-0-pts">s/n</td>
                             </tr>
                             <tr>
                                 <td>Mais Estrelas no GitHub</td>
-                                <td>s/n</td>
-                                <td>s/n</td>
+                                <td id="stars-0-qtd">s/n</td>
+                                <td id="stars-0-pts">s/n</td>
                             </tr>   
                             <tr>
                                 <td>Gists</td>
-                                <td>s/n</td>
-                                <td>s/n</td>
+                                <td id="gists-0-qtd">s/n</td>
+                                <td id="gists-0-pts">s/n</td>
                             </tr> 
                             <tr>
                                 <td>Maior nome</td>
-                                <td>s/n</td>
-                                <td>s/n</td>
+                                <td id="maior-nome-0-qtd">s/n</td>
+                                <td id="maior-nome-0-pts">s/n</td>
                             </tr>                  
                         </tbody>
                 </table>
-            <div id="total-points-user-a">qtd de pontos</div>
+            <div id="total-points-user-0">qtd de pontos</div>
         </div>
     </div>
     <div class="right">
         <div id="info-user-b">
-            <img src="user.jpg" width="70" alt="">
+            <img id="user-1-img" src="user.jpg" width="70" alt="">
             <table id="user-b">
                 <thead>
                     <tr>
@@ -153,37 +153,37 @@
                 <tbody>
                     <tr>
                         <td>Repositório Público</td>
-                        <td>s/n</td>
-                        <td>s/n</td>
+                        <td id="preps-1-qtd">s/n</td>
+                        <td id="preps-1-pts">s/n</td>
                     </tr>
                     <tr>
                         <td>Seguidores</td>
-                        <td>s/n</td>
-                        <td>s/n</td>
+                        <td id="followers-1-qtd">s/n</td>
+                        <td id="followers-1-pts">s/n</td>
                     </tr>
                     <tr>
                         <td>Seguindo</td>
-                        <td>s/n</td>
-                        <td>s/n</td>
+                        <td id="following-1-qtd">s/n</td>
+                        <td id="following-1-pts">s/n</td>
                     </tr>
                     <tr>
                         <td>Mais Estrelas no GitHub</td>
-                        <td>s/n</td>
-                        <td>s/n</td>
+                        <td id="stars-1-qtd">s/n</td>
+                        <td id="stars-1-pts">s/n</td>
                     </tr>   
                     <tr>
                         <td>Gists</td>
-                        <td>s/n</td>
-                        <td>s/n</td>
+                        <td id="gists-1-qtd">s/n</td>
+                        <td id="gists-1-pts">s/n</td>
                     </tr> 
                     <tr>
                         <td>Maior nome</td>
-                        <td>s/n</td>
-                        <td>s/n</td>
-                    </tr>                  
+                        <td id="maior-nome-1-qtd">s/n</td>
+                        <td id="maior-nome-1-pts">s/n</td>
+                    </tr>                
                 </tbody>
             </table>
-            <div id="total-points-user-b">qtd pontos</div>
+            <div id="total-points-user-1">qtd pontos</div>
         </div>
     </div>
 </div>
