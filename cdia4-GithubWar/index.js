@@ -12,6 +12,7 @@ function getUrlParameter(name) {
 function preencherResultado(usuarios){
     for(var i = 0; i < usuarios.length; i++){
         document.getElementById('user-'+i+'-img').setAttribute('src', usuarios[i].avatar_url);
+        document.getElementById('user-' + i + '-name').innerText = usuarios[i].name;
         document.getElementById('preps-' + i + '-qtd').innerText = usuarios[i].public_repos;
         document.getElementById('preps-' + i + '-pts').innerText = usuarios[i].pontosRepositoriosPublicos;
         document.getElementById('followers-'+i+'-qtd').innerText = usuarios[i].followers;
@@ -27,6 +28,13 @@ function preencherResultado(usuarios){
         document.getElementById('maior-nome-'+i+'-pts').innerText = usuarios[i].pontosNome;
         document.getElementById('total-points-user-'+i).innerText = usuarios[i].pontosTotais;
     }
+    if(usuarios[0].pontosTotais > usuarios[1].pontosTotais){
+        document.getElementById('user-0-win').className = 'imgVis';
+    }else{
+        document.getElementById('user-1-win').className = 'imgVis';
+    }
+
+    console.log(usuarios[0]);
 
 }
 

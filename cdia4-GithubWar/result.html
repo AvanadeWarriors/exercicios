@@ -26,7 +26,7 @@
            font-size: 30px;
         }
         .left{
-           margin:5% auto;
+           margin:2% auto;
            padding: 3%;
            border: 3px solid rgb(0, 0, 255);
            background-color:rgba(0, 0, 255, 0.5);
@@ -49,7 +49,7 @@
             border: 1px solid rgb(0, 0, 255);
         }
         .right{
-            margin:5% auto;
+            margin:2% auto;
             padding: 3%;
             border: 3px solid goldenrod;
             background-color:rgba(218, 165, 32, 0.5);
@@ -84,6 +84,20 @@
             -webkit-text-stroke-color: #ffffff;
             color:goldenrod; 
         }
+        .imgOculta{
+            width: 134px;
+            position: absolute;
+            margin-left: -102px;
+            margin-top: 47px;
+            display: none;
+        }
+
+        .imgVis{
+            width: 134px;
+            position: absolute;
+            margin-left: -102px;
+            margin-top: 47px;
+        }
     </style>
 </head>
 <body onload="iniciar()">
@@ -94,7 +108,9 @@
         </div>
         <div class="left">
             <div id="info-user-a">
+                <h3 id="user-0-name" style="color: #ffffff;font-family: 'Courier New', Courier, monospace;"></h3>
                 <img id="user-0-img" src="user.jpg" width="70" alt="">
+                <img id="user-0-win" width="300px" src="images/win.png" class="imgOculta">
                 <table>
                     <thead>
                             <tr>
@@ -141,7 +157,9 @@
     </div>
     <div class="right">
         <div id="info-user-b">
+            <h3 id="user-1-name" style="color: #ffffff;font-family: 'Courier New', Courier, monospace;"></h3>
             <img id="user-1-img" src="user.jpg" width="70" alt="">
+            <img id="user-1-win" src="images/win.png" class="imgOculta">
             <table id="user-b">
                 <thead>
                     <tr>
