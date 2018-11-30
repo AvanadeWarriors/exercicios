@@ -129,15 +129,17 @@
         </div>
     </div>
     <script>
+        var lutaStart = document.getElementById("luta");
         function start(){
-            var lutaStart = document.getElementById("luta");
             lutaStart.className = "lutaStartvis"
             setTimeout(trocar,4000)
         }
         function trocar(){
             var play1 = document.getElementById("txtPlayerOne").value;
             var play2 = document.getElementById("txtPlayerTwo").value;
-            window.location = 'result.html?p1='+play1+'&p2='+play2;
+            //window.location = 'result.html?p1='+play1+'&p2='+play2;
+            window.open('result.html?p1='+play1+'&p2='+play2,'_blank');
+            lutaStart.className = "lutaStart"
         }
     </script>
 </body>
