@@ -6,11 +6,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class UnidadeCervejaPipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
-    if (!value){
-      return null
+    if (!value) {
+      return null;
     }
 
-    return (args[0] == "L" ? value + "L" : value + "ml");
+    return (args[0] === 'L' ? value + 'L' : value + 'ml');
   }
 
 }

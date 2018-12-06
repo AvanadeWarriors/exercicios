@@ -7,7 +7,7 @@ import { analyzeAndValidateNgModules } from '@angular/compiler';
 export class EspacoMoedaPipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
-    return value.replace("$", "$ ");;
+    return value.replace('$', '$ ');
   }
 
 }
