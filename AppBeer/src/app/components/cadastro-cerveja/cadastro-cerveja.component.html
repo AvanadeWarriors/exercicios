@@ -1,0 +1,65 @@
+<h3>Incluir Cerveja</h3>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <div class="form-group">
+    <label for="nome">Nome</label>
+    <input type="text" class="form-control" id="nome" placeholder="Ex.: Erdiger" name="nome" 
+    [(ngModel)]="cerveja.nome" #nome="ngModel" required>
+    <small *ngIf="!nome.valid && nome.touched" class="form-text text-muted">Este campo é obrigatorio</small>
+  </div>
+
+  <div class="form-group">
+    <label for="preco">Familia</label>
+    <select class="form-control" id="familia" name="familia" [(ngModel)]="cerveja.familia" #familia="ngModel">
+      <option *ngFor="let tipo of tipos">{{ tipo }}</option>
+    </select>
+    <small *ngIf="!familia.valid && familia.touched" class="form-text text-muted">Este campo é obrigatorio</small>
+  </div>
+
+  <div class="form-group">
+    <label for="litragem">Litragem (ml)</label>
+    <input type="number" class="form-control" id="litragem" placeholder="Ex.: 350" name="litragem" 
+    [(ngModel)]="cerveja.litragem" #litragem="ngModel" required>
+    <small *ngIf="!litragem.valid && litragem.touched" class="form-text text-muted">Este campo é obrigatorio</small>
+  </div>
+
+  <div class="form-group">
+    <label for="unidade">Unidade(ml)</label>
+    <input type="text" class="form-control" id="unidade" placeholder="M ou L" name="unidade" 
+    [(ngModel)]="cerveja.unidade" #unidade="ngModel" required>
+    <small *ngIf="!unidade.valid && unidade.touched" class="form-text text-muted">Este campo é obrigatorio</small>
+  </div>
+
+  <div class="form-group">
+    <label for="preco">Preço (R$)</label>
+    <input type="number" class="form-control" id="preco" placeholder="Ex.: 11,90" name="preco" [(ngModel)]="cerveja.preco"
+      #preco="ngModel" required>
+    <small *ngIf="!preco.valid && preco.touched" class="form-text text-muted">Este campo é obrigatorio</small>
+  </div>
+
+  <div class="form-group">
+    <label for="data">Data </label>
+    <input type="date" class="form-control" id="data" placeholder="Ex.: 4,5" name="data" [(ngModel)]="cerveja.data"
+      #data="ngModel" required>
+    <small *ngIf="!data.valid && data.touched" class="form-text text-muted">Este campo é obrigatorio</small>
+  </div>
+
+  <div class="form-group">
+    <label for="ranking">Ranking </label>
+    <input type="number" class="form-control" id="ranking" placeholder="Ex.: 4,5" name="ranking" [(ngModel)]="cerveja.ranking"
+      #ranking="ngModel" required>
+    <small *ngIf="!ranking.valid && ranking.touched" class="form-text text-muted">Este campo é obrigatorio</small>
+  </div>
+
+    <div class="form-group">
+      <label for="nome">Foto URL</label>
+      <input type="text" class="form-control" id="nome" placeholder="Ex.: www/.../.jpg" name="foto" [(ngModel)]="cerveja.foto"
+        #foto="ngModel" required>
+      <small *ngIf="!foto.valid && foto.touched" class="form-text text-muted">Este campo é obrigatorio</small>
+    </div>
+  	
+  <!-- <button type="submit" class="btn btn-primary" [disabled]="!f.valid" >Salvar</button> -->
+  <button type="submit" class="btn btn-primary" >Salvar</button>
+  
+</form>
+
+<app-form-debugger [form]="f"></app-form-debugger>

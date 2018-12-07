@@ -1,7 +1,6 @@
 import { CervejaService } from './../../services/cerveja.service';
 import { ICerveja } from './../../models/cerveja.model';
-import { EspacoMoedaPipe } from './../../pipes/espaco-moeda.pipe';
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-listar-cervejas',
@@ -21,10 +20,24 @@ export class ListarCervejasComponent implements OnInit {
 
   ngOnInit() {
 
-    this.cervejaService.getCervejas().subscribe(dados => {
+    this.cervejaService.getCervejas()
+    .then(dados => {
       this.cervejas = dados;
-      this.totalCervejas = this.cervejas.length;
+      this.totalCervejas = dados.length;
+    })
+    .catch(erro => {
+      console.log(erro);
     });
+
+
+    this.cervejaService.getCerveja(2)
+    .then(dados => {
+      console.log(dados);
+    })
+    .catch(erro => {
+      console.log(erro);
+    });
+
 
 
   }

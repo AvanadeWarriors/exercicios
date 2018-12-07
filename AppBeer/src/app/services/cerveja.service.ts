@@ -13,7 +13,22 @@ export class CervejaService {
   constructor(private http: HttpClient) { }
 
   getCervejas()  {
-    return this.http.get<ICerveja[]>(this.url + 'beers');
+    return this.http.get<ICerveja[]>(this.url + 'beers').toPromise();
   }
 
+  getCerveja(id: number) {
+    return this.http.get(this.url + `beer/${id}`).toPromise();
+  }
+
+  postCerveja(cerveja: ICerveja) {
+    return this.http.post(this.url + 'beer', cerveja).toPromise();
+  }
+
+  putCerveja(cerveja: ICerveja) {
+    return this.http.put(this.url + `beer/${cerveja.id}`, cerveja).toPromise();
+  }
+
+  deleteCerveja(id: number) {
+    return this.http.delete(this.url + `beer/${id}`).toPromise();
+  }
 }
