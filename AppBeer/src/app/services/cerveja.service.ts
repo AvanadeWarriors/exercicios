@@ -12,12 +12,12 @@ export class CervejaService {
 
   constructor(private http: HttpClient) { }
 
-  getCervejas()  {
+  getCervejas() {
     return this.http.get<ICerveja[]>(this.url + 'beers').toPromise();
   }
 
   getCerveja(id: number) {
-    return this.http.get(this.url + `beer/${id}`).toPromise();
+    return this.http.get<ICerveja>(this.url + `beer/${id}`).toPromise();
   }
 
   postCerveja(cerveja: ICerveja) {
@@ -30,5 +30,9 @@ export class CervejaService {
 
   deleteCerveja(id: number) {
     return this.http.delete(this.url + `beer/${id}`).toPromise();
+  }
+
+  login(dados: any) {
+    return this.http.post(this.url + 'login', dados).toPromise();
   }
 }

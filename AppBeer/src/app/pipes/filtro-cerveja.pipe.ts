@@ -6,12 +6,14 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FiltroCervejaPipe implements PipeTransform {
 
   transform(item: any[], value: string): any[] {
-    console.log(item)
-    if (!item) return [];
+    console.log(item);
+    if (!item) { return []; }
     if (value) {
-      return item.filter(item => item.nome.toLocaleLowerCase().indexOf(value.toLocaleLowerCase()) > -1);
-    }
-    else {
+      // tslint:disable-next-line:no-shadowed-variable
+      return item.filter(item => {
+        return item.nome.toLocaleLowerCase().indexOf(value.toLocaleLowerCase()) > -1;
+      });
+    } else {
       return item;
     }
   }

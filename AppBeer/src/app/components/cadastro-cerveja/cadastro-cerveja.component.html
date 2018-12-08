@@ -58,8 +58,8 @@
     </div>
   	
   <!-- <button type="submit" class="btn btn-primary" [disabled]="!f.valid" >Salvar</button> -->
-  <button type="submit" class="btn btn-primary" >Salvar</button>
+  <button type="submit" [disabled]="!f.valid" class="btn btn-primary" >Salvar</button>
   
 </form>
 
-<app-form-debugger [form]="f"></app-form-debugger>
+
